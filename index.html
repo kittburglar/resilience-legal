@@ -3,100 +3,252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resilience - Legal Information</title>
+    <title>Resilience AI - Master Your Emotions</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
             color: #333;
-            background-color: #f5f5f7;
+        }
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        .app-store-badge {
+            display: inline-block;
+            margin: 20px 0;
+        }
+        .app-store-badge img {
+            height: 60px;
         }
         .container {
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #1d1d1f;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        .subtitle {
-            text-align: center;
-            color: #86868b;
-            margin-bottom: 40px;
-        }
-        .card {
-            border: 1px solid #d2d2d7;
-            border-radius: 8px;
+            max-width: 1000px;
+            margin: 0 auto;
             padding: 20px;
-            margin-bottom: 20px;
-            transition: transform 0.2s, box-shadow 0.2s;
         }
-        .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
         }
-        .card h2 {
-            color: #1d1d1f;
-            margin-top: 0;
-            margin-bottom: 10px;
-            font-size: 1.5em;
+        .feature {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            transition: transform 0.3s;
         }
-        .card p {
-            color: #86868b;
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .feature-icon {
+            font-size: 3em;
             margin-bottom: 15px;
         }
-        .card a {
-            display: inline-block;
-            color: #0071e3;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 10px 20px;
-            border: 1px solid #0071e3;
-            border-radius: 6px;
-            transition: background-color 0.2s, color 0.2s;
+        .feature h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.4em;
         }
-        .card a:hover {
-            background-color: #0071e3;
-            color: white;
-        }
-        .footer {
+        .pricing {
+            background: #f8f9fa;
+            padding: 60px 20px;
             text-align: center;
+        }
+        .pricing h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .pricing-cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
             margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #d2d2d7;
-            color: #86868b;
-            font-size: 14px;
+        }
+        .pricing-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            min-width: 280px;
+            max-width: 350px;
+        }
+        .pricing-card.featured {
+            border: 3px solid #667eea;
+            transform: scale(1.05);
+        }
+        .pricing-card h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+        .price {
+            font-size: 2.5em;
+            color: #667eea;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .price-detail {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+        .feature-list {
+            list-style: none;
+            text-align: left;
+            margin: 20px 0;
+        }
+        .feature-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .feature-list li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        .cta-button {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+        .cta-button:hover {
+            background: #764ba2;
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+            .features {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="hero">
+        <h1>Master Your Emotions.<br>Build Unshakeable Calm.</h1>
+        <p>Your personal AI emotional intelligence coach, available 24/7</p>
+        <a href="https://apps.apple.com/app/YOUR_APP_ID" class="app-store-badge">
+            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store">
+        </a>
+        <p style="font-size: 0.9em; margin-top: 15px;">Start free with 2 daily AI messages</p>
+    </div>
+
     <div class="container">
-        <h1>🧘 Resilience</h1>
-        <p class="subtitle">Anger Management AI - Legal Information</p>
-
-        <div class="card">
-            <h2>📋 Privacy Policy</h2>
-            <p>Learn how we collect, use, and protect your personal information when you use our app.</p>
-            <a href="privacy-policy.html">Read Privacy Policy →</a>
-        </div>
-
-        <div class="card">
-            <h2>📜 Terms of Use</h2>
-            <p>Understand the terms and conditions for using Resilience, including subscription details and user responsibilities.</p>
-            <a href="terms-of-use.html">Read Terms of Use →</a>
-        </div>
-
-        <div class="footer">
-            <p><strong>Last Updated:</strong> April 15, 2026</p>
-            <p>Questions? Contact us at <a href="mailto:support@resilienceapp.com" style="color: #0071e3;">support@resilienceapp.com</a></p>
-            <p style="margin-top: 20px;">© 2026 Resilience: Anger Management AI. All rights reserved.</p>
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">🤖</div>
+                <h3>AI Emotional Coach</h3>
+                <p>Get personalized support whenever intense emotions arise. Our AI adapts to your unique situation.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📊</div>
+                <h3>Track Your Progress</h3>
+                <p>Visualize your emotional patterns, identify triggers, and celebrate your growth over time.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🧠</div>
+                <h3>Science-Backed</h3>
+                <p>Built on proven CBT techniques, mindfulness practices, and emotional regulation strategies.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔒</div>
+                <h3>Private & Secure</h3>
+                <p>Your conversations are encrypted and confidential. We never sell your personal data.</p>
+            </div>
         </div>
     </div>
+
+    <div class="pricing">
+        <h2>Try Free, Upgrade When Ready</h2>
+        <p style="font-size: 1.2em; color: #666; max-width: 600px; margin: 0 auto;">Start with 2 free AI messages daily. Upgrade for unlimited support whenever you're ready.</p>
+        
+        <div class="pricing-cards">
+            <div class="pricing-card">
+                <h3>Free</h3>
+                <div class="price">$0</div>
+                <div class="price-detail">Forever</div>
+                <ul class="feature-list">
+                    <li>2 AI messages per day</li>
+                    <li>Unlimited episode tracking</li>
+                    <li>Progress analytics</li>
+                    <li>Breathing exercises</li>
+                    <li>CBT techniques</li>
+                </ul>
+            </div>
+            
+            <div class="pricing-card featured">
+                <h3>Premium</h3>
+                <div class="price">$9.99</div>
+                <div class="price-detail">per month</div>
+                <ul class="feature-list">
+                    <li>Unlimited AI messages</li>
+                    <li>24/7 instant support</li>
+                    <li>Advanced pattern insights</li>
+                    <li>Priority responses</li>
+                    <li>Extended history</li>
+                    <li>All future features</li>
+                </ul>
+                <a href="https://apps.apple.com/app/YOUR_APP_ID" class="cta-button">Get Started</a>
+            </div>
+        </div>
+        
+        <p style="margin-top: 30px; color: #666;">Free trial available for eligible subscribers. Cancel anytime.</p>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p style="margin-bottom: 20px;">
+                <a href="https://kittburglar.github.io/resilience-legal/support.html">Support</a> • 
+                <a href="https://kittburglar.github.io/resilience-legal/privacy-policy.html">Privacy</a> • 
+                <a href="https://kittburglar.github.io/resilience-legal/terms-of-use.html">Terms</a>
+            </p>
+            <p style="font-size: 0.9em; color: #999;">
+                This app provides emotional wellness tools and is not a substitute for professional medical or mental health care.
+            </p>
+            <p style="margin-top: 20px; color: #999;">&copy; 2026 Resilience AI. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
